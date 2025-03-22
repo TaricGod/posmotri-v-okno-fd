@@ -22,18 +22,85 @@ html {
 
 .content {
   display: grid;
-  grid-template-areas: "result content__details";
-  margin: 0 auto;
-  place-content: center;
+  grid-template-areas: "video-content list";
+  grid-template-columns: 711px 399px;
+  align-items: end;
+  align-self: center;
+  inline-size: 95%;
   gap: 30px;
 }
 
+.result__video-container{
+ position: relative;
+}
+
+.search-form {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.search-form__fieldset-title {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1;
+  color: #fff;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+.search-form__label-text {
+
+}
+
+.search-form__textfield {
+  border-style: none;
+  border: none;
+  border-bottom: 1px solid #FFF;
+  border-top: 1px solid #FFF;
+  padding: 2px;
+  margin: 0;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  inline-size: 225px;
+/*   text-decoration: underline solid #fff;
+  text-underline-offset: 4px; */
+}
+
+.search-form__checkbox {
+
+}
+
 .result {
- grid-area: result;
+ grid-area: video-content;
+ display: flex;
+ flex-direction: column;
+ gap: 16px;
+}
+
+.result__video{
+  inline-size: 100%;
+  block-size: 386px;
+  object-fit: cover;
 }
 
 .content__details {
- grid-area: content__details;
+ grid-area: list;
+ display: flex;
+ flex-direction: column;
+ gap: 26px;
+ inline-size: 100%;
+}
+
+.content__list-container{
+  position: relative;
+  block-size: 298px;
+  overflow: scroll;
 }
 
 h1,
@@ -53,6 +120,32 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.title {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-size: 75px;
+  font-weight: 700;
+  line-height: 0.94;
+  color: #FFF;
+}
+
+.title .content__accent {
+  color: #545050;
+}
+
+/*Убираем визуально но не из скринридера*/
+
+.visually-hidden {
+  position: absolute; /* элемент вырывают из потока */
+  width: 1px; /* делают элемент очень маленьким, но таким, чтобы не пропал совсем */
+  height: 1px;
+  margin: -1px; /* элемент убирают из поля зрения, сдвинув на размер самого себя */
+  padding: 0; /* обнуляют отступы, они есть у некоторых элементов по умолчанию */
+  border: 0; /* убирают границу, она тоже может быть у каких-то элементов */
+  clip: rect(0 0 0 0); /* это свойство обрезает видимую область до нулевого значения */
+  overflow: hidden; /* на всякий случай скрывают видимое за пределами блока */
 }
 
 /* Кастомный скроллбар */
