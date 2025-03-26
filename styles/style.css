@@ -8,6 +8,20 @@ html {
   block-size: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
 .page {
   display: flex;
   writing-mode: horizontal-tb;
@@ -34,6 +48,12 @@ html {
  position: relative;
 }
 
+.result__video{
+  inline-size: 100%;
+  block-size: 386px;
+  object-fit: cover;
+}
+
 .search-form {
   display: flex;
   gap: 40px;
@@ -56,7 +76,6 @@ html {
 }
 
 .search-form__textfield {
-  border-style: none;
   border: none;
   border-bottom: 1px solid #FFF;
   border-top: 1px solid #FFF;
@@ -83,11 +102,7 @@ html {
  gap: 16px;
 }
 
-.result__video{
-  inline-size: 100%;
-  block-size: 386px;
-  object-fit: cover;
-}
+
 
 .content__details {
  grid-area: list;
@@ -103,18 +118,14 @@ html {
   overflow: scroll;
 }
 
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-blockquote,
-fieldset {
-  margin: 0;
-  padding: 0;
+.button {
+  outline: none;
+	border: 1px solid #fff;
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 18px;
+	font-weight: 700;
+  text-align: center;
 }
 
 ul,
@@ -123,7 +134,7 @@ ol {
 }
 
 .title {
-  font-family: 'Oswald', sans-serif;
+  font-family: Oswald, sans-serif;
   text-transform: uppercase;
   font-size: 75px;
   font-weight: 700;
@@ -133,6 +144,10 @@ ol {
 
 .title .content__accent {
   color: #545050;
+}
+
+.content__list-item {
+  
 }
 
 /*Убираем визуально но не из скринридера*/
