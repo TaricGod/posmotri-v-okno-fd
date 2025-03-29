@@ -139,13 +139,32 @@
 .content__video-card {
   display: flex;
   flex-direction: row;
-  align-items: start;
+  justify-content: start;
 
   /* Расположите элементы внутри контейнера .content__video-card в строку, прижав к началу контейнера по дополнительной оси.*/
 }
 
+.content__video-card-title{
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.content__video-card-description{
+font-weight: 400;
+font-size: 18px;
+line-height: 90%;
+color: #fff;
+}
+
 .content__video-card-thumbnail{
-  /*Задайте размеры .content__video-card-thumbnail и расположите в них изображение так, чтобы оно закрывало весь элемент и было выровнено по центру. Используйте object-fit и object-position */
+ width: 194px;
+ height: 103px;
+ object-fit: cover;
+ object-position: center;/*Задайте размеры .content__video-card-thumbnail и расположите в них изображение так, чтобы оно закрывало весь элемент и было выровнено по центру. Используйте object-fit и object-position */
 }
 
 .content__video-card-description-container{
