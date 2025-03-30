@@ -109,9 +109,8 @@ outline: none;
 }
 
 .search-form__textfield:active {
-  outline: none;
-  border-left: 1px solid #fff;
-  border-right: 1px solid #fff;
+  outline: 1px solid #fff;
+  outline-offset: -1px;
 }
 
 
