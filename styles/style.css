@@ -1,19 +1,26 @@
-
 .content {
   display: grid;
   grid-template-areas: "video-content list";
   grid-template-columns: 711px 399px;
-  align-items: end;
-  align-self: center;
+  place-items: center;
+  margin: 0 auto;
   inline-size: 95%;
   gap: 30px;
 }
+
+.result {
+  grid-area: video-content;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+ }
 
 .result__video-container{
  position: relative;
 }
 
 .result__video{
+  display: block;
   inline-size: 100%;
   block-size: 386px;
   object-fit: cover;
@@ -24,12 +31,6 @@
   column-gap: 40px;
 }
 
-.search-form:last-child() {
-  align-items: end;
-}
-
-
-
 .search-form__fieldset {
   display: flex;
   flex-direction: column;
@@ -38,14 +39,44 @@
 }
 
 .search-form__fieldset-title {
+  align-self: start;
   font-weight: 400;
   font-size: 18px;
-  line-height: 1;
+  line-height: 22px;
   color: #fff;
+  block-size: 22px;
 }
 
-.search-form__label-text {
+.search-form__label{
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
 
+.search-form__label:focus {
+  outline: none;
+}
+
+.search-form__label:active {
+  text-decoration: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__label:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.search-form__label:hover:has(.search-form__textfield) {
+  text-decoration: none;
+}
+
+.search-form__label:active:has(.search-form__textfield) {
+  outline: none;
 }
 
 .search-form__textfield {
@@ -59,28 +90,15 @@
   line-height: 100%;
   font-family: 'Fira Sans Condensed', sans-serif;
   inline-size: 225px;
-  padding: 2px 0;
+  padding: 1.5px 0;
   letter-spacing: 0;
 /*   text-decoration: underline solid #fff;
   text-underline-offset: 4px; */
 }
 
-
-
-
-
 .search-form__checkbox {
 
 }
-
-.result {
- grid-area: video-content;
- display: flex;
- flex-direction: column;
- gap: 16px;
-}
-
-
 
 .content__details {
  grid-area: list;
@@ -88,15 +106,16 @@
  flex-direction: column;
  gap: 26px;
  inline-size: 100%;
+
 }
 
 .content__list-container{
   position: relative;
   block-size: 298px;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
-/*Кнопка result*/
+/*Кнопка result и показать ещё*/
 
 .button {
   outline: none;
@@ -108,13 +127,29 @@
   text-align: center;
   background-color: transparent;
   color: #fff;
-  line-height: 100%;
+  line-height: 22px;
+  align-self: end;
 }
 
-.search-form__submit-button{
-  padding: 6px 73.5px;
-  height: 32px;
+.button:focus {
+  outline: none;
+}
 
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  text-decoration: none;
+  background-color: #545050;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+}
+
+.search-form__submit-button {
+  padding: 5px 73.5px;
 }
 
 
@@ -131,17 +166,39 @@
   color: #545050;
 }
 
-.content__list-item {
+.content__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   gap: 30px;
-/*Создайте вертикальные отступы между элементами .content__list-item. Используйте свойство gap. */
+  padding-right: 3px;
+}
+
+.content__list-item {
+
 }
 
 .content__video-card {
   display: flex;
   flex-direction: row;
   justify-content: start;
+}
 
-  /* Расположите элементы внутри контейнера .content__video-card в строку, прижав к началу контейнера по дополнительной оси.*/
+.content__card-link {
+  text-decoration: none;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:hover {
+  text-decoration: none;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+  text-decoration: none;
 }
 
 .content__video-card-title{
@@ -151,12 +208,13 @@
   line-height: 100%;
   text-transform: uppercase;
   color: #fff;
+
 }
 
 .content__video-card-description{
 font-weight: 400;
 font-size: 18px;
-line-height: 90%;
+line-height: 16.2px;
 color: #fff;
 }
 
@@ -164,11 +222,43 @@ color: #fff;
  width: 194px;
  height: 103px;
  object-fit: cover;
- object-position: center;/*Задайте размеры .content__video-card-thumbnail и расположите в них изображение так, чтобы оно закрывало весь элемент и было выровнено по центру. Используйте object-fit и object-position */
+ object-position: center;
+ flex-grow: 0;
 }
 
 .content__video-card-description-container{
-  /*Сделайте так, чтобы .content__video-card-description-container занимал всё доступное пространство (не занятое картинкой). Вам поможет свойство flex-grow. */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  flex-grow: 1;
+  gap: 6px;
+}
+
+.more-button {
+padding: 5px 141px;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__pseudo-checkbox {
+  border: 1px solid #fff;
+  width: 19px;
+  height: 19px;
+  position: relative;
+}
+
+input[type='checkbox']:checked + .search-form__pseudo-checkbox::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  top: 1px;
+  left: 1px;
+  background-color: #fff;
 }
 
 /*Убираем визуально но не из скринридера*/
