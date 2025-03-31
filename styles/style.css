@@ -70,6 +70,7 @@ ol {
   inline-size: 100%;
   block-size: 386px;
   object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
@@ -139,6 +140,7 @@ ol {
   inline-size: 225px;
   padding: 1.5px 0;
   letter-spacing: 0;
+  color:#fff;
 }
 
 .search-form__textfield:focus {
